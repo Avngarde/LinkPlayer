@@ -1,0 +1,23 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="600"
+        x:Class="MusicPlayah.MainWindow"
+        Title="MusicPlayer">
+
+  <Grid>
+    <Grid Background="#2f2f2f" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+      
+    </Grid>
+
+    <Grid Background="#3A0000" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="80">
+      <Button Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"></Button>
+      <Button Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0"></Button>
+      <Button Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="160,0,0,0"></Button>
+      <ProgressBar VerticalAlignment="Center" HorizontalAlignment="Right" Value="50" Maximum="100" Margin="0,0,15,0" Foreground="White" Background="Black" Height="30" BorderBrush="Black" BorderThickness="5" Width="5"></ProgressBar>
+    </Grid>
+    
+  </Grid>
+
+</Window>

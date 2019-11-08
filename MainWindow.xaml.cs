@@ -17,6 +17,8 @@ namespace MusicPlayah
         private void InitializeComponent()
         {
             this.CanResize = false;
+            this.MinHeight = 600;
+            this.MinWidth = 500;
             this.MaxHeight = 600;
             this.MaxWidth = 500;
             AvaloniaXamlLoader.Load(this);

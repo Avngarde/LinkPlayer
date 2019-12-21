@@ -1,10 +1,11 @@
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow, Menu, screen} = require('electron');
 
 function createWindow () {
+  const {width, height} = screen.getPrimaryDisplay().workAreaSize;
   // Stwórz okno przeglądarki.
   let mainWin = new BrowserWindow({
-    width: 600,
-    height: 700,
+    width: Math.floor(width/3),
+    height: Math.floor(height/1.5),
     resizable: false,
     title: "Link Player",
     backgroundColor: "#2f2f2f",

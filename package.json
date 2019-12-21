@@ -1,0 +1,14 @@
+{
+  "name": "linkplayer",
+  "version": "0.0.5",
+  "description": "a player letting us play music from soundcloud and youtube links",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Kamil Paczkowski",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "electron": "^7.1.7"
+  }
+}

@@ -1,0 +1,49 @@
+#grid{
+    overflow-y: scroll;
+    background-color: white;
+    width: 90%;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    margin-top: 2%;
+}
+.item:nth-child(n+2){
+    margin-top: 6%;
+}
+
+.item .main_text{
+    font-size: 2.7vh;
+    width: 70%;
+}
+
+.item .sub_text{
+    font-size: 2.3vh;
+    width: 80%;
+}
+
+.item .delete{
+    font-size: 2vh;
+    border-radius: 5px;
+    width: 10vh;
+    height: 6vh;
+    border: none;
+    color: white;
+    background-color: maroon;
+    float: right;
+    margin-top: -6vh;
+    margin-left: 90%;
+}
+
+.item .play{
+    font-size: 2vh;
+    border-radius: 5px;
+    width: 10vh;
+    height: 6vh;
+    border: none;
+    float: right;
+    color: white;
+    background-color: darkgreen;
+    margin-top: -6vh;
+    margin-right: 9%;
+}

@@ -13,12 +13,12 @@
 }
 
 .item .main_text{
-    font-size: 2.7vh;
+    font-size: 2.8vh;
     width: 70%;
 }
 
 .item .sub_text{
-    font-size: 2.3vh;
+    font-size: 2.7vh;
     width: 80%;
 }
 
@@ -44,6 +44,6 @@
     float: right;
     color: white;
     background-color: darkgreen;
-    margin-top: -6vh;
-    margin-right: 9%;
+    margin-top: -5vh;
+    margin-right: 13%;
 }

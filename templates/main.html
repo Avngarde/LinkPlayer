@@ -1,61 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Link Player</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
-</head>
-<body>
-    <div id="grid">
-        <div class="item">
-            <div class="main_text">ASMR Cryo Spa Triggers for Sleep – Dry Ice Tingles, Glass Sounds, Liquids & More</div>
-            <div class="sub_text">https://www.url_example.com/fqefefe</div>
-            <button class="play">Play</button>
-            <button class="delete">Delete</button>
-        </div>
+    <head>
+        <title>Link Player</title>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_purple.min.css" />
+    </head>
+    <body>
 
-        <div class="item">
-            <div class="main_text">Pouya - Void [OFFICIAL MUSIC VIDEO]</div>
-            <div class="sub_text">https://www.youtube.com/watch?v=fnJqb10GiAY</div>
-            <button class="play">Play</button>
-            <button class="delete">Delete</button>
-        </div>
-        <div class="item">
-            <div class="main_text">Pouya ft. Ghostemane, Shakewell & Erick The Architect-Death By Dishonor</div>
-            <div class="sub_text">https://soundcloud.com/aiden-moneciarz/hewra-musze-juz-leciecog</div>
-            <button class="play">Play</button>
-            <button class="delete">Delete</button>
-        </div>
+      <div id="player" style="visibility: hidden; position: absolute;"></div>
 
-        <div class="item">
-            <div class="main_text">Title example</div>
-            <div class="sub_text">https://www.youtube.com/watch?v=eForWfn010Q</div>
-            <button class="play">Play</button>
-            <button class="delete">Delete</button>
-        </div>
-        <div class="item">
-            <div class="main_text">RAMIREZ - P.O.P [Paper Over Pussy]</div>
-            <div class="sub_text">https://www.youtube.com/watch?v=59aEkwzXmDw</div>
-            <button class="play">Play</button>
-            <button class="delete">Delete</button>
-        </div>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">LinkPlayer</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="javascript:minimize()">_</a>
+          <a class="mdl-navigation__link" href="javascript:close()">X</a>
+        </nav>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <form action="#" class="new_song">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">Link to the song...</label>
+            </div>
+            <input type="submit" value="Add" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          </form>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th>Thumbnail</th>
+                <th class="mdl-data-table__cell--non-numeric">Song name</th>
+                <th class="mdl-data-table__cell--non-numeric">URL</th>
+                <th>Lenght</th>
+                <th class="mdl-data-table__cell--non-numeric">Play</th>
+                <th class="mdl-data-table__cell--non-numeric">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">CITY MORGUE VOL 1: HELL OR HIGH WATER (FULL ALBUM)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=e98vwn1bchE&t=7s</td>
+                <td>30:15</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">Tennis - I Miss That Feeling (Official Video)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=ON3qRFzTzo4</td>
+                <td>3:43</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">CITY MORGUE VOL 1: HELL OR HIGH WATER (FULL ALBUM)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=e98vwn1bchE&t=7s</td>
+                <td>30:15</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">Tennis - I Miss That Feeling (Official Video)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=ON3qRFzTzo4</td>
+                <td>3:43</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">CITY MORGUE VOL 1: HELL OR HIGH WATER (FULL ALBUM)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=e98vwn1bchE&t=7s</td>
+                <td>30:15</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">Tennis - I Miss That Feeling (Official Video)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=ON3qRFzTzo4</td>
+                <td>3:43</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">CITY MORGUE VOL 1: HELL OR HIGH WATER (FULL ALBUM)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=e98vwn1bchE&t=7s</td>
+                <td>30:15</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">Tennis - I Miss That Feeling (Official Video)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=ON3qRFzTzo4</td>
+                <td>3:43</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">CITY MORGUE VOL 1: HELL OR HIGH WATER (FULL ALBUM)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=e98vwn1bchE&t=7s</td>
+                <td>30:15</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">Tennis - I Miss That Feeling (Official Video)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=ON3qRFzTzo4</td>
+                <td>3:43</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">CITY MORGUE VOL 1: HELL OR HIGH WATER (FULL ALBUM)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=e98vwn1bchE&t=7s</td>
+                <td>30:15</td>
+                <td>Play!</td>
+                <td>Delete!</td>
+              </tr>
+              <tr class="custom_hover">
+                <td class="mdl-data-table__cell--non-numeric">Tennis - I Miss That Feeling (Official Video)</td>
+                <td class="song_url">https://www.youtube.com/watch?v=ON3qRFzTzo4</td>
+                <td>3:43</td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="set_and_play_new_song('irkuFmDwvEo')">
+                  Play
+                </button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  Delete
+                </button></td>
+              </tr>
+            </tbody>
+          </table>
 
-        <div class="item">
-            <div class="main_text">Iron Maiden - Fear of The Dark (HQ)</div>
-            <div class="sub_text">https://www.youtube.com/watch?v=p32b5nNq1zw</div>
-            <button class="play">Play</button>
-            <button class="delete">Delete</button>
-        </div>
-    </div>
+          <div class="bottom_line">
+            <span class="current_song">
+              <p>CITY MORGUE VOL 1: HELL OR HIGH WATER (FULL ALBUM)</p>
+            </span>
 
-    <div id="player_zone">
+            <span class="controls">
+              <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent">
+                <i class="material-icons">navigate_before</i>
+              </button>
+              <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent" onclick="pause_or_play()">
+                <i class="material-icons">pause</i>
+              </button>
+              <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent">
+                <i class="material-icons">navigate_next</i>
+              </button>
+            </span>
 
-    </div>
+            <span class="volume_control">
+              <input class="mdl-slider mdl-js-slider" type="range"
+              min="0" max="100" value="50" tabindex="0" onchange="change_volume()" name="current_volume">
+            </span>
 
-    <script>
-        let items = document.getElementsByClassName("item");
-        for(let idx=0; idx<=items.length; idx++){
-            console.log(items[idx]);
-        }
-    </script>
-</body>
+          </div>
+      </div>
+    </main>
+  </div>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script>
+    const YTPlayer = require('yt-player');
+    const player = new YTPlayer('#player');
+    let playing = false;
+    let current_time = 0;
+
+    function close(){
+        const remote = require('electron').remote;
+        let current_window = remote.getCurrentWindow();
+        current_window.close();
+    }
+
+    function minimize(){
+        const remote = require('electron').remote;
+        let current_window = remote.getCurrentWindow();
+        current_window.minimize();
+    }
+
+    function change_volume(){
+      player.setVolume(parseInt(document.getElementsByName('current_volume')[0].value));
+    }
+
+    function set_and_play_new_song(url){
+      player.load(url);
+      player.setVolume(parseInt(document.getElementsByName('current_volume')[0].value));
+      player.play();
+      playing = true;
+    }
+
+    function pause_or_play(){
+      if(playing===true) {
+        player.pause();
+        playing = false;
+      } else{
+        player.play();
+        playing = true;
+      }
+    }
+</script>
+  </body>
 </html>

@@ -1,49 +1,118 @@
-#grid{
-    overflow-y: scroll;
-    background-color: white;
-    width: 90%;
-    height: 60vh;
+body{
+    margin: 0;
+    background-color: #2f2f2f;
+    height: 100%;
+}
+
+.mdl-textfield .mdl-js-textfield .mdl-textfield--floating-label{
+    -webkit-app-region: no-drag; 
+    text-decoration-line: none;
+}
+
+.mdl-textfield__input{
+    color: white;
+}
+
+.mdl-textfield__label{
+    color: white;
+}
+
+.mdl-data-table .mdl-js-data-table .mdl-shadow--2dp{
+    -webkit-app-region:no-drag; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: 5%; 
+    width: 90%; 
+    height: 10px;
+}
+
+table{
+    height: 5vh;
+    width: 88%;
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
-    padding: 3%;
+    margin-bottom: 2%;
+}
+
+thead{
+    border-radius: 5px;
+    background-color: #414141; 
+    border:none;
+}
+
+thead th{
+    color: white;
+}
+
+header{
+    -webkit-app-region: drag
+}
+
+.mdl-navigation__link{
+    -webkit-app-region:no-drag;
+}
+
+tbody{
+    overflow-y: scroll; 
+    margin-bottom: 1%; 
+    background-color: #414141; 
+    height: 100vh;
+    color: whitesmoke; 
+    border:none;
+}
+
+.mdl-data-table{
+    border: none !important;
+    background-color: rgba(0,0,0,.12) !important;
+}
+
+.song_url{
+    float: left;
+}
+
+.new_song{
+    margin-left: 35%;
+    margin-right: auto;
+}
+
+.bottom_line{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    background-color: whitesmoke;
+    padding: 0.5%;
+}
+
+
+.custom_hover:hover{
+    background-color: #5c5c5c !important;
+}
+
+.controls{
+    margin-left: 12%;
+    margin-right: auto;
+}
+
+.controls button{
+    margin-top:0.5%;
+}
+
+.volume_control{
+    float: right;
+    margin-right: 4%;
+    width: 20%;
     margin-top: 2%;
 }
-.item:nth-child(n+2){
-    margin-top: 6%;
+
+.current_song p{
+    margin-top: 1%;
+    width: 30%;
+    float: left;
 }
 
-.item .main_text{
-    font-size: 2.8vh;
-    width: 70%;
-}
-
-.item .sub_text{
-    font-size: 2.7vh;
-    width: 80%;
-}
-
-.item .delete{
-    font-size: 2vh;
-    border-radius: 5px;
-    width: 10vh;
-    height: 6vh;
-    border: none;
-    color: white;
-    background-color: maroon;
-    float: right;
-    margin-top: -6vh;
-    margin-left: 90%;
-}
-
-.item .play{
-    font-size: 2vh;
-    border-radius: 5px;
-    width: 10vh;
-    height: 6vh;
-    border: none;
-    float: right;
-    color: white;
-    background-color: darkgreen;
-    margin-top: -5vh;
-    margin-right: 13%;
+.mdl-button{
+    margin-top: 1%;
+    margin-bottom: 1%;
 }

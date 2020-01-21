@@ -1,20 +1,21 @@
 const {app, BrowserWindow, Menu, screen} = require('electron');
-const path = require('path');
 
 function createWindow (){
   const {width, height} = screen.getPrimaryDisplay().workAreaSize;
   // Stwórz okno przeglądarki.
   let mainWin = new BrowserWindow({
-    width: Math.floor(width/1.5),
-    height: Math.floor(height/1.3),
+    width: Math.floor(width/1.3),
+    height: Math.floor(height/1.07),
     resizable: false,
-    frame: true,
+    transparent: true,
+    background: '#2f2f2f',
+    frame: false,
     title: "Link Player",
     webPreferences: {
       nodeIntegration: true
     }
   });
-  mainWin.loadURL(path.resolve('./templates/main.html'));
+  mainWin.loadURL("file://"+__dirname+"/templates/main.html");
 }
 
-app.on('ready', createWindow);
+app.on('ready', createWindow)

@@ -1,0 +1,32 @@
+{
+  "name": "linkplayer",
+  "version": "0.0.1",
+  "description": "Electron application letting us play music from YT, Spotify and SoundCloud",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShamanDev/LinkPlayer.git"
+  },
+  "keywords": [
+    "Music",
+    "YouTube",
+    "Spotify",
+    "SoundCloud",
+    "Electron",
+    "Player",
+    "Desktop"
+  ],
+  "author": "Kamil Paczkowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShamanDev/LinkPlayer/issues"
+  },
+  "homepage": "https://github.com/ShamanDev/LinkPlayer#readme",
+  "devDependencies": {
+    "electron": "^8.2.0"
+  }
+}

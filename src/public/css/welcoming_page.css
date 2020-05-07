@@ -1,0 +1,41 @@
+@font-face{
+    font-family: 'Noto Sans';
+    src: url('../fonts/NotoSans-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-VariableFont_wght.ttf');
+}
+
+
+body{
+    background-color: #202020;
+    color: rgb(243, 243, 243);
+}
+
+#welcoming_page{
+    padding-top:10%;
+    text-align: center;
+}
+
+#welcoming_page h1{
+    font-family: 'Noto Sans';
+}
+
+#welcoming_page img{
+    margin-right: 4.3%;
+}
+
+#welcoming_page button{
+    border: none;
+    color: black;
+    background-color: white;
+    padding: 3%;
+    margin-top: 5%;
+    border-radius: 4em;
+    width: 40%;
+    font-family: 'Comfortaa';
+    font-size: 1.2em;
+    box-shadow: 3px 3px 3px black;
+}

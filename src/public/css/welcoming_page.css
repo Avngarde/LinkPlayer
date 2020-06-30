@@ -21,6 +21,7 @@ body{
 
 #welcoming_page h1{
     font-family: 'Noto Sans';
+    font-weight: 400;
 }
 
 #welcoming_page img{

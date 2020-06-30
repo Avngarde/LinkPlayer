@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../public/css/welcoming_page.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/app.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="welcoming_page" style="z-index: 1;">
+    <div id="welcoming_page" style="z-index: 1; position: absolute; visibility: hidden;">
         <img src="../public/images/LinkPlayerLogoWhite.svg" width="250" height="250">
         <h1>Welcome to LinkPlayer!</h1>
         <button onclick="switching()">Start</button>
     </div>
 
-    <div id="actual_app" style="background-color: white;">
-        Dupcia
+    <div id="actual_app">
+         <div class="music_player">
+             <div class="controls">
+                 <button><</button>
+                 <button>||</button>
+                 <button>></button>
+             </div>
+             <input type="range" value="100">
+         </div>
     </div>
 </body>
 
@@ -27,9 +35,9 @@
         await sleep(10);
         for(let i=0; i<=80; i++){
             await sleep(8);
-            document.getElementById("welcoming_page").style = "position:absolute; margin-top: "+ "-" + i + "%; margin-left: 12.7%; z-index:1;"
+            document.getElementById("welcoming_page").style = "position:absolute; margin-top: "+ "-" + i + "%; margin-left: 12.7%; z-index:1;";
         }
-        document.getElementById("welcoming_page").style = "visibility:hidden; position:absolute;"
+        document.getElementById("welcoming_page").style = "visibility:hidden; position:absolute;";
     }
 </script>
 

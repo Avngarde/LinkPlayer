@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/ShamanDev/LinkPlayer#readme",
   "devDependencies": {
-    "electron": "^8.2.0"
+    "electron": "^8.2.4"
   }
 }

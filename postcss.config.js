@@ -10,7 +10,9 @@ module.exports = {
       selectorBlackList: ['html', 'body'],
       replace: true,
       mediaQuery: false,
-      minPixelValue: 0
-    }
+      minPixelValue: 0,
+    },
+    'tailwindcss': require('tailwindcss'),
+    'autoprefixer': require('autoprefixer')
   }
 }

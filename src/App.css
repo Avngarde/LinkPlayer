@@ -1,0 +1,13 @@
+@import "tailwind.css";
+
+
+.prompt {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.songs_grid {
+    height: 83vh;
+}

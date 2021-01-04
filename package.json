@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/alexdevero/electron-react-webpack-boilerplate.git"
   },
-  "homepage": "",
+  "homepage": ".",
   "bugs": {
     "url": "https://github.com/alexdevero/electron-react-webpack-boilerplate/issues"
   },
@@ -48,7 +48,15 @@
   "dependencies": {
     "postcss": "^8.2.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-router-dom": "^5.2.0",
+    "react-dom": "^17.0.1",
+    "tailwindcss": "^2.0.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "soundcloud-downloader": "^0.1.6",
+    "react-spring": "^8.0.27",
+    "youtube-mp3-downloader": "^0.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

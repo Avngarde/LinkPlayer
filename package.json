@@ -46,16 +46,17 @@
     "postpackage": "electron-packager ./ --out=./builds"
   },
   "dependencies": {
-    "postcss": "^8.2.1",
-    "react": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-dom": "^17.0.1",
-    "tailwindcss": "^2.0.2",
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "soundcloud-downloader": "^0.1.6",
+    "postcss": "^8.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-spring": "^8.0.27",
+    "soundcloud-downloader": "^0.2.2",
+    "tailwindcss": "^2.0.2",
     "youtube-mp3-downloader": "^0.7.3"
   },
   "devDependencies": {

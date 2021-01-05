@@ -1,6 +1,6 @@
 const scdl = require('soundcloud-downloader');
 const fs = require('fs');
-const clientId = 'koSuixzk25Cz0fDgsPfhkgeZcKBr7lpQ';
+const clientId = '7fd0268919164882f79c88e5953e0d9ab1f68ceb';
 
 
 
@@ -19,10 +19,11 @@ function getSoundCloudSongInfo(info) {
 }
 
 function downloadSoundCloudSong(url) {
+    console.log(process.env);
     return scdl.getInfo(url, clientId)
     .then(function(info){
         console.log(getSoundCloudSongInfo(info));
-        scdl.download(url, clientId).then(stream => stream.pipe(fs.createWriteStream(`../../songs/${info.user.username} - ${info.title}.mp3`)));
+        scdl.download(url, clientId).then(stream => stream.pipe(fs.createWriteStream(`../songs/${info.user.username} - ${info.title}.mp3`)));
     });
 }
 

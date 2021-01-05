@@ -1,14 +1,21 @@
-let youtube_downloader = require('youtube-mp3-downloader');
+const youtube_downloader = require('youtube-mp3-downloader');
+const ffmpeg = require('@ffmpeg-installer/ffmpeg');
+const fs = require('fs');
 
 
 function getYoutubeID(youtube_url) {
     return youtube_url.split('=')[1];
 }
 
+function checkIfSongsDirectoryExist() {
+    fs.existsSync("../songs") ? null : fs.mkdirSync('../songs');
+}
+
 function downloadYoutubeSong(youtube_id) {
-    let YD = new youtube_downloader({
-        "ffmpegPath": "../important_files/ffmpeg.exe",
-        "outputPath": "../../songs/",
+    checkIfSongsDirectoryExist();
+    const YD = new youtube_downloader({
+        "ffmpegPath": ffmpeg.path,
+        "outputPath": "../songs",
         "youtubeVideoQuality": "highestaudio",
         "queueParallelism": 2,
         "progressTimeout": 2000,

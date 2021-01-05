@@ -1,7 +1,6 @@
-const scdl = require('soundcloud-downloader');
+const scdl = require('soundcloud-downloader').default;
 const fs = require('fs');
 const clientId = '7fd0268919164882f79c88e5953e0d9ab1f68ceb';
-
 
 
 function getAudioDuration(miliseconds) {
@@ -19,7 +18,6 @@ function getSoundCloudSongInfo(info) {
 }
 
 function downloadSoundCloudSong(url) {
-    console.log(process.env);
     return scdl.getInfo(url, clientId)
     .then(function(info){
         console.log(getSoundCloudSongInfo(info));
@@ -32,5 +30,4 @@ function createNewSong(url) {
 }
 
 
-downloadSoundCloudSong("https://soundcloud.com/42dugg/not-a-rapper-feat-lil-baby-yo-gotti")
 module.createNewSoundCloudSong = createNewSong;

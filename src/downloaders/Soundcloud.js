@@ -25,8 +25,8 @@ function downloadSoundCloudSong(url) {
     });
 }
 
-function createNewSong(url) {
-    // TODO
+function createNewSong(url, playlist_name) {
+    
 }
 
 

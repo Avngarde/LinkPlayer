@@ -2,6 +2,10 @@ import React from 'react';
 
 
 function AddNewSong(props) {
+    const addNewSong = (props) => {
+
+    }
+
     return (
     <div className="w-full text-center">
         <input class="shadow appearance-none border rounded w-1/5 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3" id="username" type="text" placeholder="URL (Youtube, SoundCloud)"></input>

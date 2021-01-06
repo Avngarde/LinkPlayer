@@ -47,7 +47,7 @@ function Navigation() {
                 <animated.div 
                     key={key} 
                     style={props} 
-                    className="fixed bg-gray-900 top-0 left-0 w-4/5 h-full z-50 shadow-2xl p-3">
+                    className="fixed bg-gray-900 top-0 left-0 w-2/12 h-full z-50 shadow-2xl p-3">
                         <NavigationMenu closeMenu={() => setShowMenu(false)}/>
                 </animated.div>
             )}

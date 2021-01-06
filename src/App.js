@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 import Header from './base_components/Header';
-import Footer from './music_player_components/Footer';
 import SongsGrid from './music_player_components/SongsGrid';
 import PlaylistSwitch from './music_player_components/PlaylistSwitch';
 import ViewPlaylists from './view_playlists/ViewPlaylists';

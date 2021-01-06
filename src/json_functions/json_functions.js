@@ -1,12 +1,12 @@
 const fs = require('fs');
 
 function readPlaylistsFile(){
-    const raw_json = fs.readFileSync('D:/LinkPlayer/linkplayer/src/important_files/playlists.json', 'utf8');
+    const raw_json = fs.readFileSync('../important_files/playlists.json', 'utf8');
     return raw_json;
 }
 
 function writePlaylistsFile(raw_json) {
-    fs.writeFileSync('D:/LinkPlayer/linkplayer/src/important_files/playlists.json', raw_json, 'utf-8');
+    fs.writeFileSync('../important_files/playlists.json', raw_json, 'utf-8');
 }
 
 function deserializeJSON(raw_json) {
@@ -28,7 +28,9 @@ function getPlaylist(playlist_title) {
             playlist_to_return = playlist;
         }
     });
-    return playlist_to_return;
+    if (playlist_to_return != null) {
+        return playlist_to_return;
+    }
 }
 
 function addNewPlaylist(playlist) {
@@ -58,7 +60,7 @@ function addSongToPlaylist(song, playlist_title) {
     let playlists = deserializeJSON(raw_playlists);
     playlists.playlists.forEach(playlist => {
         if (playlist.name === playlist_title) {
-            playlist.songs.push(song);
+            playlist["songs"].push(song);
         }
     });
     let stringified_playlists = JSON.stringify(playlists, null, 4); // null and 4 are for pretty printing json in file

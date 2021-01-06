@@ -1,8 +1,10 @@
 {
     "playlists": [
         {
-            "name": "Hehełki",
-            "songs": []
+            "name": "playlist",
+            "songs": [
+
+            ]
         }
     ]
 }

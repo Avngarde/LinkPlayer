@@ -10,28 +10,27 @@ function getAudioDuration(miliseconds) {
     return `${minutes}:${seconds}`;
 }
 
+function checkIfSongsDirectoryExist() {
+    fs.existsSync("../songs") ? null : fs.mkdirSync('../songs');
+}
+
 function getSongInfo(info) {
     let song_info = {};
-    song_info["title"] = info.user.username + info.title;
+    song_info["title"] = info.user.username + " - " + info.title;
     song_info["duration"] = getAudioDuration(info.duration);
     song_info["path"] = `../songs/${info.user.username} - ${info.title}.mp3`;
     return song_info;
 }
 
-function downloadSoundCloudSong(url) {
+function downloadSoundCloudSong(url, playlist_name) {
+    checkIfSongsDirectoryExist();
     scdl.getInfo(url, clientId)
     .then(function(info){
         scdl.download(url, clientId).then(stream => stream.pipe(fs.createWriteStream(`../songs/${info.user.username} - ${info.title}.mp3`)));
-        return getSongInfo(info);
+        let song_info = getSongInfo(info);
+        json_functions.addSongToPlaylist(song_info, playlist_name);
     });
 }
 
-function createNewSong(url, playlist_name) {
-    if (json_functions.getPlaylist(playlist_name) != null) {
-        let song_info = downloadSoundCloudSong(url);
-        json_functions.addSongToPlaylist(song_info, playlist_name);
-    }
-}
 
-createNewSong("https://soundcloud.com/lilsvckrxd/rest-yo-soul", "playlist");
-module.createNewSoundCloudSong = createNewSong;
+module.downloadSoundCloudSong = downloadSoundCloudSong;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import * as json_functions from '../json_functions/json_functions';
 import * as Soundcloud from '../downloaders/Soundcloud';
 import * as Youtube from '../downloaders/Youtube';
 
@@ -8,7 +7,19 @@ function AddNewSong(props) {
     const [newSongURL, setNewSongURL] = useState(null);
 
     const addNewSong = (event) => {
-        
+        if (newSongURL.includes("soundcloud")) {
+            let err = Soundcloud.downloadSoundCloudSong(newSongURL);
+            if (err != null) {
+                alert("Something went wrong");
+            }
+        } else if (newSongURL.includes("youtube")) {
+            let err = Youtube.downloadYoutubeSong(newSongURL);
+            if (err != null) {
+                alert("Something went wrong");
+            }
+        } else {
+            alert("Website not supported!")
+        }
     }
 
     return (

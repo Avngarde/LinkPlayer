@@ -23,6 +23,7 @@ function getSongInfo(info) {
 }
 
 function downloadSoundCloudSong(url, playlist_name) {
+    try {
     checkIfSongsDirectoryExist();
     scdl.getInfo(url, clientId)
     .then(function(info){
@@ -30,6 +31,9 @@ function downloadSoundCloudSong(url, playlist_name) {
         let song_info = getSongInfo(info);
         json_functions.addSongToPlaylist(song_info, playlist_name);
     });
+    } catch (e) {
+        return "error";
+    }
 }
 
 

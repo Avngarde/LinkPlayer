@@ -32,34 +32,29 @@ function getSongInfo(data) {
 }
 
 function downloadYoutubeSong(youtube_url, playlist_name) {
-    console.log(json_functions.getPlaylist(playlist_name));
     if (json_functions.getPlaylist(playlist_name) != null) {
         checkIfSongsDirectoryExist();
         let id = getYoutubeID(youtube_url);
         const YD = new youtube_downloader({
-            "ffmpegPath": ffmpeg.path,
+            "ffmpegPath": `D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/node_modules/@ffmpeg-installer/win32-x64/ffmpeg.exe`,
             "outputPath": "../songs",
             "youtubeVideoQuality": "highestaudio",
             "queueParallelism": 2,
             "progressTimeout": 2000,
             "allowWebm": true
         });
-
         YD.download(id);
 
         YD.on("finished", function(err, data) {
             let song_info = getSongInfo(data);
             json_functions.addSongToPlaylist(song_info, playlist_name);
-            console.log("Gotowe!!");
         });
         
         YD.on("error", function(error) {
-            console.log(error);
+            return error;
         });
     }
 }
 
-downloadYoutubeSong("https://www.youtube.com/watch?v=GZuzxD63A6w", "playlist");
 
-module.getYoutubeID = getYoutubeID;
 module.downloadYoutubeSong = downloadYoutubeSong; 

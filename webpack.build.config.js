@@ -48,12 +48,18 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new MinifyPlugin()
+    new MinifyPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.FLUENTFFMPEG_COV': false
+    })
   ],
   stats: {
     colors: true,
     children: false,
     chunks: false,
     modules: false
-  }
+  },
+  resolve : {
+    modules: ['node_modules']
+  }, 
 }

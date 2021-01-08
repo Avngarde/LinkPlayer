@@ -3,7 +3,16 @@
         {
             "name": "playlist",
             "songs": [
+                {
+                    "title": "CYBERHXLL - ASK U",
+                    "duration": "2:33",
+                    "path": "./songs/CYBERHXLL - ASK U.mp3"
+                }
             ]
+        },
+        {
+            "name": "Nowa plejlista",
+            "songs": []
         }
     ]
 }

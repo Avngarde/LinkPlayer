@@ -36,6 +36,9 @@ module.exports = {
     new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
+    }),
+    new webpack.DefinePlugin({
+      'process.env.FLUENTFFMPEG_COV': false
     })
   ],
   devtool: 'cheap-source-map',
@@ -55,5 +58,10 @@ module.exports = {
       .on('close', code => process.exit(0))
       .on('error', spawnError => console.error(spawnError))
     }
+  },
+
+  resolve: {
+    modules: [path.resolve(__dirname, 'node_modules'), 'node_modules']
   }
+
 }

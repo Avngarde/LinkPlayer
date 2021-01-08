@@ -43,11 +43,13 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
             "progressTimeout": 2000,
             "allowWebm": true
         });
+
         YD.download(id);
 
         YD.on("finished", function(err, data) {
             let song_info = getSongInfo(data);
             json_functions.addSongToPlaylist(song_info, playlist_name);
+            alert("LECIMY WOOHOO");
         });
         
         YD.on("error", function(error) {
@@ -57,4 +59,4 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
 }
 
 
-module.downloadYoutubeSong = downloadYoutubeSong; 
+exports.downloadYoutubeSong = downloadYoutubeSong;

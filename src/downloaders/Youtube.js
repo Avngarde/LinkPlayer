@@ -1,8 +1,8 @@
 const youtube_downloader = require('youtube-mp3-downloader');
-const ffmpeg = require('@ffmpeg-installer/ffmpeg');
 const getMP3Duration = require('get-mp3-duration');
 const fs = require('fs');
-const json_functions = require('D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/src/json_functions/json_functions.js');
+const electron = require('electron');
+const json_functions = require('../json_functions/json_functions');
 
 
 
@@ -36,7 +36,7 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
         checkIfSongsDirectoryExist();
         let id = getYoutubeID(youtube_url);
         const YD = new youtube_downloader({
-            "ffmpegPath": ffmpeg.path,
+            "ffmpegPath": electron.remote.getGlobal('ffmpeg_path'),
             "outputPath": "../songs",
             "youtubeVideoQuality": "highestaudio",
             "queueParallelism": 2,

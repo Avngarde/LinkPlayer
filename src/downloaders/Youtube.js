@@ -36,7 +36,7 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
         checkIfSongsDirectoryExist();
         let id = getYoutubeID(youtube_url);
         const YD = new youtube_downloader({
-            "ffmpegPath": `D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/node_modules/@ffmpeg-installer/win32-x64/ffmpeg.exe`,
+            "ffmpegPath": ffmpeg.path,
             "outputPath": "../songs",
             "youtubeVideoQuality": "highestaudio",
             "queueParallelism": 2,

@@ -42,11 +42,6 @@ module.exports = {
     }),
   ],
 
-  externals: [
-    { '@ffmpeg-installer/ffmpeg': { commonjs: '@ffmpeg-installer/ffmpeg' } },
-    { 'fluent-ffmpeg': { commonjs: 'fluent-ffmpeg' } },
-  ],
-
   devtool: 'cheap-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),

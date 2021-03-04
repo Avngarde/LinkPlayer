@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 function readPlaylistsFile(){
-    const raw_json = fs.readFileSync('./src//important_files/playlists.json', 'utf8');
+    const raw_json = fs.readFileSync('./src/important_files/playlists.json', 'utf8');
     return raw_json;
 }
 

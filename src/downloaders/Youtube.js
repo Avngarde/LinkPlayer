@@ -1,7 +1,6 @@
 const youtube_downloader = require('youtube-mp3-downloader');
 const getMP3Duration = require('get-mp3-duration');
 const fs = require('fs');
-const ffmpeg = require('@ffmpeg-installer/ffmpeg');
 const json_functions = require('../json_functions/json_functions');
 
 
@@ -35,7 +34,7 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
         checkIfSongsDirectoryExist();
         let id = getYoutubeID(youtube_url);
         const YD = new youtube_downloader({
-            "ffmpegPath": ffmpeg.path,
+            "ffmpegPath": "./src/important_files/ffmpeg.exe",
             "outputPath": "../songs",
             "youtubeVideoQuality": "highestaudio",
             "queueParallelism": 2,

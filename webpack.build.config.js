@@ -54,11 +54,6 @@ module.exports = {
     }),
   ],
 
-  externals: [
-    nodeExternals(),
-    { '@ffmpeg-installer/ffmpeg': { commonjs: '@ffmpeg-installer/ffmpeg' } },
-    { 'fluent-ffmpeg': { commonjs: 'fluent-ffmpeg' } },
-  ],
 
   stats: {
     colors: true,

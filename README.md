@@ -1,3 +1,1 @@
-<p align="center">
-  LinkPlayer
-</p>
+### <p align="center">LinkPlayer</p>

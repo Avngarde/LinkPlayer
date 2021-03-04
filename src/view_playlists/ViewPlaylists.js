@@ -17,7 +17,7 @@ function ViewPlaylists(props) {
     return (
         <div className="h-screen w-full overflow-hidden">
             <PlaylistSwitch adding_new_playlist_available={true} updateParentPlaylistName={updateParentPlaylistName} />
-            <AddNewSong />
+            <AddNewSong playlist_name={currentPlaylistName} updateParentPlaylistName={updateParentPlaylistName} />
             <SongsGrid edit_mode={true} playlist_name={currentPlaylistName} />
         </div>
     )

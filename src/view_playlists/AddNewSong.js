@@ -8,18 +8,20 @@ function AddNewSong(props) {
 
     const addNewSong = (event) => {
         if (newSongURL.includes("soundcloud")) {
-            let err = Soundcloud.downloadSoundCloudSong(newSongURL, "playlist");
+            let err = Soundcloud.downloadSoundCloudSong(newSongURL, props.playlist_name);
             if (err != null) {
                 alert("Something went wrong");
             } else {
                 alert ("New song added succesfully");
+                props.updateParentPlaylistName();
             }
         } else if (newSongURL.includes("youtube")) {
-            let err = Youtube.downloadYoutubeSong(newSongURL, "playlist");
+            let err = Youtube.downloadYoutubeSong(newSongURL, props.playlist_name);
             if (err != null) {
                 alert("Something went wrong");
             } else {
                 alert("Website added succesfully");
+                props.updateParentPlaylistName();
             }
         } else {
             alert("Website not supported!")

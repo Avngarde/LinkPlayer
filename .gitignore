@@ -36,6 +36,8 @@ npm-debug.log*
 *.rar
 *.tar
 *.zip
+*.exe
+
 
 # Photoshop & Illustrator files #
 #################################

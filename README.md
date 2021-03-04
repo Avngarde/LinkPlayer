@@ -6,8 +6,9 @@ LinkPlayer is a cross-platform application that is a SoundCloud/YouTube to mp3 a
 <li>Electron ⚛</li>
 <li>Webpack 📦</li>
 <li>JavaScript</li>
+
 ## How to debug
 - First download FFMPEG for your operating system, and put it in important_files folder</li>
 - Then:
-- ``` npm install ```
-- ``` npm start ```
+``` npm install ```
+``` npm start ```

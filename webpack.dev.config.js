@@ -37,10 +37,16 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new webpack.DefinePlugin({
-      'process.env.FLUENTFFMPEG_COV': false
-    })
+    new webpack.EnvironmentPlugin({
+      FLUENTFFMPEG_COV: false,
+    }),
   ],
+
+  externals: [
+    { '@ffmpeg-installer/ffmpeg': { commonjs: '@ffmpeg-installer/ffmpeg' } },
+    { 'fluent-ffmpeg': { commonjs: 'fluent-ffmpeg' } },
+  ],
+
   devtool: 'cheap-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),

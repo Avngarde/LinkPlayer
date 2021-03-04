@@ -1,7 +1,15 @@
 import React from 'react';
+import * as json_functions from '../json_functions/json_functions';
+const fs = require('fs');
 
 
 function Song(props) {
+    const deleteSong = (song_title, playlist_name) => {
+        //Delete song file
+        fs.unlinkSync("songs/" + song_title + ".mp3");
+        json_functions.deleteSongFromPlaylist(song_title, playlist_name);
+    }
+
     if (props.edit_mode === false){
         return (
             <div className="text-center bg-gray-900 rounded text-gray-200 flex p-3 w-full mt-2 mb-4">
@@ -29,7 +37,7 @@ function Song(props) {
                     {props.duration}
                 </div>
 
-                <button className="align-middle text-sm bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                <button onclick={deleteSong(props.title, props.playlist_name)} className="align-middle text-sm bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
                     delete
                 </button>
             </div>

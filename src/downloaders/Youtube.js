@@ -1,9 +1,8 @@
 const youtube_downloader = require('youtube-mp3-downloader');
 const getMP3Duration = require('get-mp3-duration');
 const fs = require('fs');
-const electron = require('electron');
+const ffmpeg = require('@ffmpeg-installer/ffmpeg');
 const json_functions = require('../json_functions/json_functions');
-
 
 
 function getYoutubeID(youtube_url) {
@@ -36,7 +35,7 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
         checkIfSongsDirectoryExist();
         let id = getYoutubeID(youtube_url);
         const YD = new youtube_downloader({
-            "ffmpegPath": electron.remote.getGlobal('ffmpeg_path'),
+            "ffmpegPath": ffmpeg.path,
             "outputPath": "../songs",
             "youtubeVideoQuality": "highestaudio",
             "queueParallelism": 2,
@@ -49,7 +48,7 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
         YD.on("finished", function(err, data) {
             let song_info = getSongInfo(data);
             json_functions.addSongToPlaylist(song_info, playlist_name);
-            alert("LECIMY WOOHOO");
+            alert("Pobrało się");
         });
         
         YD.on("error", function(error) {

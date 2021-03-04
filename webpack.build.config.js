@@ -49,10 +49,17 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new MinifyPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.FLUENTFFMPEG_COV': false
-    })
+    new webpack.EnvironmentPlugin({
+      FLUENTFFMPEG_COV: false,
+    }),
   ],
+
+  externals: [
+    nodeExternals(),
+    { '@ffmpeg-installer/ffmpeg': { commonjs: '@ffmpeg-installer/ffmpeg' } },
+    { 'fluent-ffmpeg': { commonjs: 'fluent-ffmpeg' } },
+  ],
+
   stats: {
     colors: true,
     children: false,

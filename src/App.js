@@ -31,7 +31,7 @@ function App() {
             <SongsGrid edit_mode={false} playlist_name={currentPlaylistName} />
             <div className="footer w-full h-12 bg-gray-700 text-gray-100 fixed bottom-0 justify-between flex">
               <div className="text-xs mt-4 ml-5 w-4/12 inline-block overflow-visible truncate">
-              Marvin Gaye - Let's get it on
+              
               </div>
 
               <div class="inline-block xl:mr-64 mt-1">

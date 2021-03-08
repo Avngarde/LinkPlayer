@@ -17,12 +17,12 @@ function getAudioFileDuration(file_path) {
 }
 
 function checkIfSongsDirectoryExist() {
-    fs.existsSync("../songs") ? null : fs.mkdirSync('../songs');
+    fs.existsSync("../../songs") ? null : fs.mkdirSync('../../songs');
 }
 
 function getSongInfo(data) {
     let song_info = {};
-    song_info["title"] = data["title"];
+    song_info["title"] = data["videoTitle"];
     song_info["duration"] = getAudioFileDuration(data["file"]);
     song_info["path"] = data["file"];
 
@@ -34,27 +34,30 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
         checkIfSongsDirectoryExist();
         let id = getYoutubeID(youtube_url);
         const YD = new youtube_downloader({
-            "ffmpegPath": "/important_files/ffmpeg.exe",
-            "outputPath": "D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/songs/",
-            "youtubeVideoQuality": "highestaudio",
+            "ffmpegPath": "D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/src/important_files/ffmpeg.exe",
+            "outputPath": "D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/songs",
+            "youtubeVideoQuality": "lowestaudio",
             "queueParallelism": 2,
             "progressTimeout": 2000,
             "allowWebm": true
         });
 
-4
 
         YD.download(id);
-        alert("GUWNO");
 
         YD.on("finished", function(err, data) {
-            alert(JSON.stringify(data));
+            let song_info = getSongInfo(data);
+            json_functions.addSongToPlaylist(song_info, playlist_name);
+            alert("New song successfully added");
+            window.location.reload();
         });
-        
+         
         YD.on("error", function(error) {
-            return error;
+            console.log(error);
         });
+
     }
 }
+
 
 exports.downloadYoutubeSong = downloadYoutubeSong;

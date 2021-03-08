@@ -29,6 +29,7 @@ function downloadSoundCloudSong(url, playlist_name) {
     .then(function(info){
         scdl.download(url, clientId).then(stream => {
             stream.pipe(fs.createWriteStream(`./songs/${info.user.username} - ${info.title}.mp3`));
+            alert("New song successfully added");
             window.location.reload();
         });
         let song_info = getSongInfo(info);

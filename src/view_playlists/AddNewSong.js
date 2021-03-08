@@ -8,21 +8,9 @@ function AddNewSong(props) {
 
     const addNewSong = (event) => {
         if (newSongURL.includes("soundcloud")) {
-            let err = Soundcloud.downloadSoundCloudSong(newSongURL, props.playlist_name);
-            if (err != null) {
-                alert("Something went wrong");
-                setNewSongURL("");
-            } else {
-                alert ("New song added succesfully");
-                setNewSongURL("");
-            }
+            Soundcloud.downloadSoundCloudSong(newSongURL, props.playlist_name);
         } else if (newSongURL.includes("youtube")) {
-            let err = Youtube.downloadYoutubeSong(newSongURL, props.playlist_name);
-            if (err != null) {
-                alert("Something went wrong");
-            } else {
-                alert("New song added succesfully");
-            }
+            Youtube.downloadYoutubeSong(newSongURL, props.playlist_name);
         } else {
             alert("Website not supported!")
         }

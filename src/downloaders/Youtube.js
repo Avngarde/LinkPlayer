@@ -29,25 +29,26 @@ function getSongInfo(data) {
     return song_info;
 }
 
-async function downloadYoutubeSong(youtube_url, playlist_name) {
+function downloadYoutubeSong(youtube_url, playlist_name) {
     if (json_functions.getPlaylist(playlist_name) != null) {
         checkIfSongsDirectoryExist();
         let id = getYoutubeID(youtube_url);
         const YD = new youtube_downloader({
             "ffmpegPath": "/important_files/ffmpeg.exe",
-            "outputPath": "./songs",
+            "outputPath": "D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/songs/",
             "youtubeVideoQuality": "highestaudio",
             "queueParallelism": 2,
             "progressTimeout": 2000,
             "allowWebm": true
         });
 
+4
+
         YD.download(id);
+        alert("GUWNO");
 
         YD.on("finished", function(err, data) {
-            let song_info = getSongInfo(data);
-            json_functions.addSongToPlaylist(song_info, playlist_name);
-            alert("Pobrało się");
+            alert(JSON.stringify(data));
         });
         
         YD.on("error", function(error) {
@@ -55,8 +56,5 @@ async function downloadYoutubeSong(youtube_url, playlist_name) {
         });
     }
 }
-
-downloadYoutubeSong('https://www.youtube.com/watch?v=RL8Ct8dKmAk', 'playlist');
-
 
 exports.downloadYoutubeSong = downloadYoutubeSong;

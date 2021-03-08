@@ -11,17 +11,17 @@ function AddNewSong(props) {
             let err = Soundcloud.downloadSoundCloudSong(newSongURL, props.playlist_name);
             if (err != null) {
                 alert("Something went wrong");
+                setNewSongURL("");
             } else {
                 alert ("New song added succesfully");
-                props.updateParentPlaylistName();
+                setNewSongURL("");
             }
         } else if (newSongURL.includes("youtube")) {
             let err = Youtube.downloadYoutubeSong(newSongURL, props.playlist_name);
             if (err != null) {
                 alert("Something went wrong");
             } else {
-                alert("Website added succesfully");
-                props.updateParentPlaylistName();
+                alert("New song added succesfully");
             }
         } else {
             alert("Website not supported!")

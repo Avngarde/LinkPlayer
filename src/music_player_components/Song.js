@@ -8,6 +8,7 @@ function Song(props) {
         fs.unlinkSync("songs/" + song_title + ".mp3");  //Delete song file
         json_functions.deleteSongFromPlaylist(song_title, playlist_name);
         alert("Song deleted successfully");
+        window.location.reload();
     }
 
     if (props.edit_mode === false){
@@ -37,7 +38,7 @@ function Song(props) {
                     {props.duration}
                 </div>
 
-                <button onclick={() => deleteSong(props.title, props.playlist_name)} className="align-middle text-sm bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                <button onClick={() => deleteSong(props.title, props.playlist_name)} className="align-middle text-sm bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
                     delete
                 </button>
             </div>

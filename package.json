@@ -57,7 +57,7 @@
     "react-spring": "^8.0.27",
     "soundcloud-downloader": "^0.2.2",
     "tailwindcss": "^2.0.2",
-    "youtube-mp3-downloader": "^0.7.3"
+    "youtube-mp3-downloader": "^0.7.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

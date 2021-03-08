@@ -1,12 +1,12 @@
 const fs = require('fs');
 
 function readPlaylistsFile(){
-    const raw_json = fs.readFileSync('./src/important_files/playlists.json', 'utf8');
+    const raw_json = fs.readFileSync('D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/src/important_files/playlists.json', 'utf8');
     return raw_json;
 }
 
 function writePlaylistsFile(raw_json) {
-    fs.writeFileSync('./src/important_files/playlists.json', raw_json, 'utf-8');
+    fs.writeFileSync('D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/src/important_files/playlists.json', raw_json, 'utf-8');
 }
 
 function deserializeJSON(raw_json) {

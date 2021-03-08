@@ -4,7 +4,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
-global.ffmpeg_path = require('@ffmpeg-installer/ffmpeg').path;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.

@@ -29,13 +29,13 @@ function getSongInfo(data) {
     return song_info;
 }
 
-function downloadYoutubeSong(youtube_url, playlist_name) {
+async function downloadYoutubeSong(youtube_url, playlist_name) {
     if (json_functions.getPlaylist(playlist_name) != null) {
         checkIfSongsDirectoryExist();
         let id = getYoutubeID(youtube_url);
         const YD = new youtube_downloader({
-            "ffmpegPath": "./src/important_files/ffmpeg.exe",
-            "outputPath": "../songs",
+            "ffmpegPath": "/important_files/ffmpeg.exe",
+            "outputPath": "./songs",
             "youtubeVideoQuality": "highestaudio",
             "queueParallelism": 2,
             "progressTimeout": 2000,
@@ -55,6 +55,8 @@ function downloadYoutubeSong(youtube_url, playlist_name) {
         });
     }
 }
+
+downloadYoutubeSong('https://www.youtube.com/watch?v=RL8Ct8dKmAk', 'playlist');
 
 
 exports.downloadYoutubeSong = downloadYoutubeSong;

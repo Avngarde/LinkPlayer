@@ -40,6 +40,7 @@ module.exports = {
     new webpack.EnvironmentPlugin({
       FLUENTFFMPEG_COV: false,
     }),
+    "emotion",
   ],
 
   devtool: 'cheap-source-map',

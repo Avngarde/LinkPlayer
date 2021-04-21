@@ -50,6 +50,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "get-mp3-duration": "^1.0.0",
+    "howler": "^2.2.1",
+    "node-aplay": "^1.0.3",
     "postcss": "^8.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

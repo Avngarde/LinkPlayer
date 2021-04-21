@@ -22,7 +22,7 @@ function Song(props) {
                     {props.duration}
                 </div>
 
-                <button className="align-middle text-sm bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded mr-3">
+                <button onClick={() => props.play_song(props.title)} className="align-middle text-sm bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded mr-3">
                     play
                 </button>
             </div>

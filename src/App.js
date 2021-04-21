@@ -16,9 +16,35 @@ import {
 
 function App() {
   const [currentPlaylistName, setCurrentPlaylistName] = useState(json_functions.getAllPlaylists()[0].name);
+  const [currentSongName, setCurrentSongName] = useState("");
+  const [paused, setPaused] = useState(true);
+  const [currentAudio, setCurrentAudio] = useState(new Audio('D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/public/songs/lol.mp3'));
+  const [audioVolume, setAudioVolume] = useState(100);
 
   const updateAppPlaylistName = (playlist_name) => {
       setCurrentPlaylistName(playlist_name)
+  }
+
+  const playSong = (song_name) => {
+      setCurrentSongName(song_name);
+      setPaused(false);
+      currentAudio.play();
+  }
+
+  const pauseOrContinueSong = () => {
+      if (!paused) {
+        setPaused(true);
+        currentAudio.pause();
+      } else {
+        setPaused(false);
+        currentAudio.play();
+      }
+  }
+
+  const changeVolume = (volume) => {
+      setAudioVolume(volume);
+      currentAudio.volume = volume/150;
+      console.log(volume/150);
   }
 
   return (
@@ -28,26 +54,30 @@ function App() {
           <Route exact path="/">
             <Header />
             <PlaylistSwitch adding_new_playlist_available={false} updateParentPlaylistName={updateAppPlaylistName} />
-            <SongsGrid edit_mode={false} playlist_name={currentPlaylistName} />
+            <SongsGrid edit_mode={false} playlist_name={currentPlaylistName} play_song={playSong}/>
             <div className="footer w-full h-12 bg-gray-700 text-gray-100 fixed bottom-0 justify-between flex">
               <div className="text-xs mt-4 ml-5 w-4/12 inline-block overflow-visible truncate">
-              
+                  {currentSongName}
               </div>
 
               <div class="inline-block xl:mr-64 mt-1">
                   <button class="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-1 h-8 px-3 mt-1 rounded-l">
                       <FontAwesomeIcon icon={faChevronCircleLeft} />
                   </button>
-                  <button class="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-1 px-3 h-8 mt-1">
-                      <FontAwesomeIcon icon={faPauseCircle} />
+
+                  <button class="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-1 px-3 h-8 mt-1" onClick={() => {pauseOrContinueSong()}}>
+                    {paused ? <FontAwesomeIcon icon={faPlayCircle} /> : <FontAwesomeIcon icon={faPauseCircle} />}
                   </button>
+
                   <button class="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-1 px-3 h-8 rounded-r mt-1">
                       <FontAwesomeIcon icon={faChevronCircleRight} />
                   </button>
               </div>
               
               <div className="inline-flex mr-4">
-                  <input type="range"></input>
+                  <input type="range" min="0" max="100" onChange={e => {
+                    changeVolume(e.target.value);
+                  }}></input>
               </div>
             </div>
           </Route>
@@ -58,7 +88,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-
     </div>
   )
 }

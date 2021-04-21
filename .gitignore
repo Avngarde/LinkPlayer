@@ -37,7 +37,7 @@ npm-debug.log*
 *.tar
 *.zip
 *.exe
-
+playlists.json
 
 # Photoshop & Illustrator files #
 #################################

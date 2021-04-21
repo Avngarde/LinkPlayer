@@ -18,7 +18,7 @@ function App() {
   const [currentPlaylistName, setCurrentPlaylistName] = useState(json_functions.getAllPlaylists()[0].name);
   const [currentSongName, setCurrentSongName] = useState("");
   const [paused, setPaused] = useState(true);
-  const [currentAudio, setCurrentAudio] = useState(new Audio('D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/public/songs/lol.mp3'));
+  const [currentAudio, setCurrentAudio] = useState(new Audio(''));
   const [audioVolume, setAudioVolume] = useState(100);
 
   const updateAppPlaylistName = (playlist_name) => {
@@ -61,16 +61,8 @@ function App() {
               </div>
 
               <div class="inline-block xl:mr-64 mt-1">
-                  <button class="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-1 h-8 px-3 mt-1 rounded-l">
-                      <FontAwesomeIcon icon={faChevronCircleLeft} />
-                  </button>
-
-                  <button class="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-1 px-3 h-8 mt-1" onClick={() => {pauseOrContinueSong()}}>
+                  <button class="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-1 px-10 h-8 mt-1" onClick={() => {pauseOrContinueSong()}}>
                     {paused ? <FontAwesomeIcon icon={faPlayCircle} /> : <FontAwesomeIcon icon={faPauseCircle} />}
-                  </button>
-
-                  <button class="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-1 px-3 h-8 rounded-r mt-1">
-                      <FontAwesomeIcon icon={faChevronCircleRight} />
                   </button>
               </div>
               

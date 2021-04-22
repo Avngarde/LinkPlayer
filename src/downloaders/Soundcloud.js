@@ -1,7 +1,7 @@
 const scdl = require('soundcloud-downloader').default;
 const fs = require('fs');
 const clientId = '7fd0268919164882f79c88e5953e0d9ab1f68ceb';
-const json_functions = require('D:/LinkPlayer/boilerplate/electron-react-webpack-boilerplate/src/json_functions/json_functions.js');
+const json_functions = require('../json_functions/json_functions.js');
 
 
 function getAudioDuration(miliseconds) {
@@ -11,14 +11,13 @@ function getAudioDuration(miliseconds) {
 }
 
 function checkIfSongsDirectoryExist() {
-    fs.existsSync("./songs") ? null : fs.mkdirSync('./songs');
+    fs.existsSync("src/songs") ? null : fs.mkdirSync('src/songs');
 }
 
 function getSongInfo(info) {
     let song_info = {};
     song_info["title"] = info.user.username + " - " + info.title;
     song_info["duration"] = getAudioDuration(info.duration);
-    song_info["path"] = `./songs/${info.user.username} - ${info.title}.mp3`;
     return song_info;
 }
 
@@ -28,7 +27,7 @@ function downloadSoundCloudSong(url, playlist_name) {
     scdl.getInfo(url, clientId)
     .then(function(info){
         scdl.download(url, clientId).then(stream => {
-            stream.pipe(fs.createWriteStream(`./songs/${info.user.username} - ${info.title}.mp3`));
+            stream.pipe(fs.createWriteStream(`src/songs/${info.user.username} - ${info.title}.mp3`));
             alert("New song successfully added");
             window.location.reload();
         });

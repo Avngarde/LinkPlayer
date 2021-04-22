@@ -5,7 +5,6 @@ const { app, BrowserWindow, protocol } = require('electron')
 const path = require('path')
 const url = require('url')
 
-
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -33,7 +32,7 @@ function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1024,
-    height: 768,
+    height: 1024,
     show: false,
     webPreferences: {
       nodeIntegration: true,
@@ -85,6 +84,7 @@ function createWindow() {
   })
 }
 
+
 app.whenReady().then(() => {
   protocol.registerFileProtocol('file', (request, callback) => {
     const pathname = request.url.replace('file:///', '');
@@ -113,4 +113,4 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
-})
+});

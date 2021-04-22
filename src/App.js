@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './base_components/Header';
 import SongsGrid from './music_player_components/SongsGrid';
@@ -18,34 +18,41 @@ function App() {
   const [currentPlaylistName, setCurrentPlaylistName] = useState(json_functions.getAllPlaylists()[0].name);
   const [currentSongName, setCurrentSongName] = useState("");
   const [paused, setPaused] = useState(true);
-  const [currentAudio, setCurrentAudio] = useState(new Audio(''));
-  const [audioVolume, setAudioVolume] = useState(100);
+  const [currentAudio, setCurrentAudio] = useState(new Audio(""));
 
   const updateAppPlaylistName = (playlist_name) => {
-      setCurrentPlaylistName(playlist_name)
-  }
+    setCurrentPlaylistName(playlist_name)
+}
 
-  const playSong = (song_name) => {
+const playSong = (song_name) => {
+    if (currentAudio.currentTime <= 0) {
+      let path = "file:///src/songs/" + song_name + ".mp3";
       setCurrentSongName(song_name);
+      setCurrentAudio(new Audio(path));
+    }
+}
+
+useEffect(() => {
+  console.log("Guwnoo wraaaeh");
+  setPaused(false);
+  currentAudio.play();
+}, [currentAudio]);
+
+const pauseOrContinueSong = () => {
+    if (paused) {
       setPaused(false);
       currentAudio.play();
-  }
+    } else {
+      setPaused(true);
+      currentAudio.pause();
+    }
+}
 
-  const pauseOrContinueSong = () => {
-      if (!paused) {
-        setPaused(true);
-        currentAudio.pause();
-      } else {
-        setPaused(false);
-        currentAudio.play();
-      }
-  }
+const changeVolume = (volume) => {
+    currentAudio.volume = volume/150;
+    console.log(volume/150);
+}
 
-  const changeVolume = (volume) => {
-      setAudioVolume(volume);
-      currentAudio.volume = volume/150;
-      console.log(volume/150);
-  }
 
   return (
     <div className="h-screen w-full overflow-hidden bg-gray-800">

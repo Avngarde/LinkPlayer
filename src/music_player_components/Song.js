@@ -5,7 +5,7 @@ const fs = require('fs');
 
 function Song(props) {
     const deleteSong = (song_title, playlist_name) => {
-        fs.unlinkSync("songs/" + song_title + ".mp3");  //Delete song file
+        fs.unlinkSync("src/songs/" + song_title + ".mp3");  //Delete song file
         json_functions.deleteSongFromPlaylist(song_title, playlist_name);
         alert("Song deleted successfully");
         window.location.reload();

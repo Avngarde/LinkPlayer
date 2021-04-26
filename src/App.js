@@ -51,8 +51,7 @@ const changeVolume = (volume) => {
     currentAudio.volume = volume/150;
 }
 
-
-  return (
+return (
     <div className="h-screen w-full overflow-hidden bg-gray-800">
       <Router>
         <Switch>

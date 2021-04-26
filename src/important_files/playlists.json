@@ -2,9 +2,7 @@
     "playlists": [
         {
             "name": "Example playlist",
-            "songs": [
-
-            ]
+            "songs": []
         }
     ]
 }

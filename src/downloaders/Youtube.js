@@ -15,11 +15,11 @@ function createFilename(videoTitle) {
             filename.replace(char, "");
         }
     }
-    return filename;
+    return filename+".mp3";
 }
 
 function changeMP3FileName(originalSongName, changedSongName) {
-    fs.rename('src/songs/'+originalSongName+'.mp3', 'src/songs/'+changedSongName+'.mp3', function(err) {
+    fs.rename('src/songs/'+originalSongName+'.mp3', 'src/songs/'+changedSongName, function(err) {
         if (err) alert(err);
     });
 }

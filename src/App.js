@@ -24,9 +24,9 @@ function App() {
     setCurrentPlaylistName(playlist_name)
 }
 
-const playSong = (song_name) => {
+const playSong = (song_name, song_filename) => {
     if (currentAudio.currentTime <= 0) {
-      let path = "file:///src/songs/" + song_name + ".mp3";
+      let path = "file:///src/songs/" + song_filename;
       setCurrentSongName(song_name);
       setCurrentAudio(new Audio(path));
     }

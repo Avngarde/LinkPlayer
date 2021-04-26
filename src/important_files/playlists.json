@@ -1,17 +1,10 @@
 {
     "playlists": [
         {
-            "name": "Muzyka rockowa",
+            "name": "Example playlist",
             "songs": [
-                {
-                    "title": "Wolves",
-                    "duration": "5:2"
-                }
+
             ]
-        },
-        {
-            "name": "Gothic pasty",
-            "songs": []
         }
     ]
 }

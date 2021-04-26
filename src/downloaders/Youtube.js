@@ -8,6 +8,22 @@ function getYoutubeID(youtube_url) {
     return youtube_url.split('=')[1];
 }
 
+function createFilename(videoTitle) {
+    let filename = videoTitle.split(" ").join("");
+    for (let char in filename) {
+        if (!(/^[a-zA-Z()]+$/.test(char))) {
+            filename.replace(char, "");
+        }
+    }
+    return filename;
+}
+
+function changeMP3FileName(originalSongName, changedSongName) {
+    fs.rename('src/songs/'+originalSongName+'.mp3', 'src/songs/'+changedSongName+'.mp3', function(err) {
+        if (err) alert(err);
+    });
+}
+
 function getAudioFileDuration(file_path) {
     const buffer = fs.readFileSync(file_path);
     const miliseconds = getMP3Duration(buffer);
@@ -24,6 +40,8 @@ function getSongInfo(data) {
     let song_info = {};
     song_info["title"] = data["videoTitle"];
     song_info["duration"] = getAudioFileDuration(data["file"]);
+    song_info["filename"] = createFilename(data["videoTitle"]);
+    changeMP3FileName(song_info["title"], song_info["filename"]); // Change the name of mp3 file after being downloaded
 
     return song_info;
 }

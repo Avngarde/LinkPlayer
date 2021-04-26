@@ -33,7 +33,6 @@ const playSong = (song_name) => {
 }
 
 useEffect(() => {
-  console.log("Guwnoo wraaaeh");
   setPaused(false);
   currentAudio.play();
 }, [currentAudio]);
@@ -50,7 +49,6 @@ const pauseOrContinueSong = () => {
 
 const changeVolume = (volume) => {
     currentAudio.volume = volume/150;
-    console.log(volume/150);
 }
 
 

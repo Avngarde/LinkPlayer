@@ -33,9 +33,9 @@ function PlaylistSwitch(props) {
                 : null
                 }
                 <div className="w-full text-center pt-2 pb-2">
-                    <select className="bg-gray-500 w-1/3 rounded" value={currentlyChoosenPlaylist} onChange={e => {
-                        setCurrentlyChoosenPlaylist(e.target.value);
-                        props.updateParentPlaylistName(e.target.value);
+                    <select className="bg-gray-500 w-1/3 rounded" value={currentlyChoosenPlaylist} onChange={event => {
+                        setCurrentlyChoosenPlaylist(event.target.value);
+                        props.updateParentPlaylistName(event.target.value);
                     }}>
                         {playlistsList}
                     </select>
@@ -62,9 +62,9 @@ function PlaylistSwitch(props) {
     } else {
         return (
                 <div className="w-full text-center pt-2 pb-2">
-                    <select className="bg-gray-500 w-1/3 rounded" value={currentlyChoosenPlaylist} onChange={e => {
-                        setCurrentlyChoosenPlaylist(e.target.value);
-                        props.updateParentPlaylistName(e.target.value);
+                    <select className="bg-gray-500 w-1/3 rounded" value={currentlyChoosenPlaylist} onChange={event => {
+                        setCurrentlyChoosenPlaylist(event.target.value);
+                        props.updateParentPlaylistName(event.target.value);
                     }}>
                         {playlistsList}
                     </select>

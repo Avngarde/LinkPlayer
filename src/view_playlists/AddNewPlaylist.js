@@ -19,7 +19,7 @@ function AddNewPlaylist(props) {
     return (
         <form onSubmit={handleSubmit}>
             <div className="w-full text-center">
-                <input value={newPlaylistName} onChange={e => setNewPlaylistName(e.target.value)} class="shadow appearance-none border rounded w-6/12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3" id="username" type="text" placeholder="Playlist name"></input>
+                <input value={newPlaylistName} onChange={event => setNewPlaylistName(event.target.value)} class="shadow appearance-none border rounded w-6/12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3" id="username" type="text" placeholder="Playlist name"></input>
                 <input type="submit" value="Add new playlist" className="bg-blue-500 hover:bg-blue-400 ml-1 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mt-3" />
             </div>
         </form>
